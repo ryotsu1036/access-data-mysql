@@ -1,4 +1,4 @@
-package com.example.accessdatamysql.Controllers.Auth;
+package com.example.accessdatamysql.controllers.auth;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
