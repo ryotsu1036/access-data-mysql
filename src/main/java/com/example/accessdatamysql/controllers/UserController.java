@@ -1,5 +1,6 @@
-package com.example.accessdatamysql;
+package com.example.accessdatamysql.controllers;
 
+import com.example.accessdatamysql.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @Controller
-@RequestMapping({ "/users" })
+@RequestMapping("/users")
 public class UserController {
 
     // This means to get the bean called userRepository
@@ -21,12 +22,12 @@ public class UserController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @GetMapping({ "/create" })
+    @RequestMapping("/create")
     public String create() {
         return "users/create";
     }
 
-    @PostMapping()
+    @RequestMapping(value = {}, method = RequestMethod.POST)
     @ResponseBody
     public String store(@RequestParam Map<String, String> request) {
         return "Password: " + passwordEncoder.encode(request.get("password"));
@@ -34,8 +35,7 @@ public class UserController {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        // BCrypt 會在內部生成隨機鹽
-        // BCrypt 演算法會生成長度為 60 的字串
+        // BCrypt 演算法會生成長度為 60 的字串，且會在內部生成隨機鹽
         return new BCryptPasswordEncoder();
     }
 

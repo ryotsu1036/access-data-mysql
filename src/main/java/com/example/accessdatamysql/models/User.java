@@ -1,4 +1,4 @@
-package com.example.accessdatamysql;
+package com.example.accessdatamysql.models;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -84,3 +84,4 @@ public class User {
         this.updateAt = updateAt;
     }
 }
+
