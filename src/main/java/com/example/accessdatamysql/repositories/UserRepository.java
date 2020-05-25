@@ -9,4 +9,5 @@ public interface UserRepository extends CrudRepository<User, Integer> {
      * CRUD refers Create, Read, Update, Delete
      *
      */
+    User findByUsername(String username);
 }

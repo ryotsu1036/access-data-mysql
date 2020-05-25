@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant" xmlns:th="https://www.thymeleaf.org/" xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/app}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Spring Login</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Login Page</title>
 </head>
 <body>
     <div class="container" layout:fragment="content">
@@ -21,6 +16,7 @@
 
                                 <div class="col-md-6">
                                     <input type="text" name="username" class="form-control" id="username">
+                                    <small id="emailHelp" class="form-text text-danger" th:if="${param.error}">Invalid username and password.</small>
                                 </div>
                             </div>
 
