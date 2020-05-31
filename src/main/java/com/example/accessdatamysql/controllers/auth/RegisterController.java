@@ -25,7 +25,8 @@ public class RegisterController {
         user.setUsername(username);
         user.setEmail(email);
         user.setPassword(new BCryptPasswordEncoder().encode(password));
+        user.setEnabled(true);
         userRepository.save(user);
-        return "Saved";
+        return "redirect:/login";
     }
 }

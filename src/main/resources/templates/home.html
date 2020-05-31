@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" xmlns:th="https://www.thymeleaf.org/" xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/app}">
+<html lang="zh-Hant"
+      xmlns:th="https://www.thymeleaf.org/"
+      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layouts/app}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Dashboard</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container" layout:fragment="content">
@@ -16,7 +15,10 @@
                     <div class="card-header">Dashboard</div>
 
                     <div class="card-body">
-                        You are logged in!
+                        Name: <span sec:authentication="principal.user.name"></span><br>
+                        Email: <span sec:authentication="principal.user.email"></span><br>
+                        Username: <span sec:authentication="principal.user.username"></span><br>
+                        Roles: <span sec:authentication="principal.authorities"></span>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" xmlns:th="https://www.thymeleaf.org/" xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/app}">
+<html lang="zh-Hant"
+      xmlns:th="https://www.thymeleaf.org/"
+      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layouts/app}">
 <head>
     <title>Login Page</title>
 </head>
@@ -15,8 +19,8 @@
                                 <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" name="username" class="form-control" id="username">
-                                    <small id="emailHelp" class="form-text text-danger" th:if="${param.error}">Invalid username and password.</small>
+                                    <input type="text" name="username" class="form-control" id="username" autofocus>
+                                    <small id="usernameHelp" class="form-text text-danger" th:if="${param.error}">Invalid username and password.</small>
                                 </div>
                             </div>
 
